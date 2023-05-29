@@ -9,6 +9,7 @@
   <body>
     <div class="container py-5">
         <h1 class="text-center">Popular Book</h1>
+        <button type="button" class="btn btn-success mt-3">Tabah +</button>
         <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
 
             @foreach ($data as $item)
