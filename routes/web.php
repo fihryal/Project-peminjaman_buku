@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/perpus');
 });
 
 
 Route::get('/perpus',[BukuController::class, 'index']);
+Route::get('/tambahbuku',[BukuController::class, 'create']);
+Route::post('/insertdata',[BukuController::class, 'insertdata']);
