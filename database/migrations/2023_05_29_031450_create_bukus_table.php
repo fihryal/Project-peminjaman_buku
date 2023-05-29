@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_buku');
             $table->enum('genre',['Romantis','Fanfiction','Science Fiction ','Fantasi','Thriller','Historical','Horor','Realistic Fiction']);
-            $table->string('komentar');
+            $table->longText('komentar', 225);
             $table->timestamps();
         });
     }
