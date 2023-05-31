@@ -24,4 +24,19 @@ class BukuController extends Controller
         return redirect('/perpus')->with('success','Data Berhasil Di Tambahkan');
     }
 
+    public function edit($id)
+    {
+        $data = buku::find($id);
+
+        return view ('tampilkandata', compact('data'));
+    }
+
+    public function updatedata(Request $request, $id)
+    {
+        $data = buku::find($id);
+        $data->update($request->all());
+
+        return redirect('/perpus')->with('success','Data Berhasil Di Update');
+    }
+
 }

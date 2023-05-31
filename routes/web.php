@@ -22,3 +22,6 @@ Route::get('/', function () {
 Route::get('/perpus',[BukuController::class, 'index']);
 Route::get('/tambahbuku',[BukuController::class, 'create']);
 Route::post('/insertdata',[BukuController::class, 'insertdata']);
+
+Route::get('/tampilkandata/{id}',[BukuController::class, 'edit']);
+Route::post('/updatedata/{id}',[BukuController::class, 'updatedata']);
