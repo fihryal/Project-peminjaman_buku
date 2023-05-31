@@ -21,7 +21,7 @@ class BukuController extends Controller
     public function insertdata(Request $request)
     {
         buku::create($request->all());
-        return redirect('/perpus');
+        return redirect('/perpus')->with('success','Data Berhasil Di Tambahkan');
     }
 
 }
