@@ -25,3 +25,5 @@ Route::post('/insertdata',[BukuController::class, 'insertdata']);
 
 Route::get('/tampilkandata/{id}',[BukuController::class, 'edit']);
 Route::post('/updatedata/{id}',[BukuController::class, 'updatedata']);
+
+Route::get('/delete/{id}',[BukuController::class, 'delete']);

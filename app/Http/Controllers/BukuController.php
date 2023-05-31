@@ -21,7 +21,7 @@ class BukuController extends Controller
     public function insertdata(Request $request)
     {
         buku::create($request->all());
-        return redirect('/perpus')->with('success','Data Berhasil Di Tambahkan');
+        return redirect('/perpus')->with('success','Data Berhasil DiTambahkan');
     }
 
     public function edit($id)
@@ -36,7 +36,15 @@ class BukuController extends Controller
         $data = buku::find($id);
         $data->update($request->all());
 
-        return redirect('/perpus')->with('success','Data Berhasil Di Update');
+        return redirect('/perpus')->with('success','Data Berhasil DiUpdate');
+    }
+
+    public function delete($id)
+    {
+        $data = buku::find($id);
+        $data->delete();
+
+        return redirect('/perpus')->with('success','Data Berhasil DiHapus');
     }
 
 }

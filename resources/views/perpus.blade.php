@@ -32,7 +32,7 @@
                         
                     </div>
                     <div class="mb-5 d-flex justify-content-around">
-                        <button class="btn btn-danger">Delete</button>
+                        <a href="/delete/{{$item -> id}}" class="btn btn-danger">Delete</a>
                         <a href="/tampilkandata/{{$item -> id}}" class="btn btn-warning">Edit</a>
                     </div>
                     
