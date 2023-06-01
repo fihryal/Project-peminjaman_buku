@@ -20,7 +20,7 @@
             @foreach ($data as $item)
             <div class="col">
                 <div class="card">
-                    <img src="./img/dish1.jpg" class="card-img-top" alt="...">
+                    <img src="{{asset('fotobuku/' .$item->foto)}}" class="card-img-top" alt="..."  >
                     <div class="card-body">
                         <h5 class="card-title">{{$item -> nama_buku}}</h5>
                         <div class="mt-3" style="font: 16px/26px Georgia, Garamond, Serif; height: 200px; overflow: scroll; width: 250px;">

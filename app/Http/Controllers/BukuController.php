@@ -20,8 +20,13 @@ class BukuController extends Controller
 
     public function insertdata(Request $request)
     {
-        buku::create($request->all());
-        return redirect('/perpus')->with('success','Data Berhasil DiTambahkan');
+        $data = buku::create($request->all());
+        if ($request -> hasFile('foto')) {
+            $request -> file('foto')->move('fotobuku/',$request->file('foto')->getClientOriginalName());
+            $data -> foto = $request -> file('foto')->getClientOriginalName();
+            $data->save(); 
+        }
+        return redirect('/perpus')->with('success','Data Berhasil Di Tambahkan');
     }
 
     public function edit($id)
@@ -35,8 +40,13 @@ class BukuController extends Controller
     {
         $data = buku::find($id);
         $data->update($request->all());
+        if ($request -> hasFile('foto')) {
+            $request -> file('foto')->move('fotobuku/',$request->file('foto')->getClientOriginalName());
+            $data -> foto = $request -> file('foto')->getClientOriginalName();
+            $data->save(); 
+        }
 
-        return redirect('/perpus')->with('success','Data Berhasil DiUpdate');
+        return redirect('/perpus')->with('success','Data Berhasil Di Update');
     }
 
     public function delete($id)
@@ -44,7 +54,7 @@ class BukuController extends Controller
         $data = buku::find($id);
         $data->delete();
 
-        return redirect('/perpus')->with('success','Data Berhasil DiHapus');
+        return redirect('/perpus')->with('success','Data Berhasil Di Hapus');
     }
 
 }

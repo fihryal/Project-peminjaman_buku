@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('bukus', function (Blueprint $table) {
             $table->id();
+            $table->string('foto');
             $table->string('nama_buku');
             $table->enum('genre',['Romantis','Fanfiction','Science Fiction ','Fantasi','Thriller','Historical','Horor','Realistic Fiction']);
             $table->longText('komentar', 225);

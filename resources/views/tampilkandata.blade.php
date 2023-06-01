@@ -19,6 +19,11 @@
                             <form action="/updatedata/{{ $data -> id}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group mt-4"  >
+                                  <label for="exampleInputEmail1">Gambar</label>
+                                  <input type="file" name="foto" class="form-control" value="{{$data -> foto}}">
+                                </div>
+
+                                <div class="form-group mt-4"  >
                                   <label for="exampleInputEmail1">Nama Buku</label>
                                   <input type="text" name="nama_buku" class="form-control" placeholder="Nama buku populer" value="{{$data -> nama_buku}}">
                                 </div>
