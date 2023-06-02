@@ -20,22 +20,31 @@
                                 @csrf
                                 <div class="form-group mt-4"  >
                                   <label for="exampleInputEmail1">Gambar</label>
-                                  <input type="file" name="foto" class="form-control">
+                                  <input type="file" name="foto" class="form-control @error('foto') is-invalid @enderror" value="{{old('foto')}}">
+                                  @error('foto')
+                                  <div class="invalid-feedback">{{$message}}</div>
+                                  @enderror
                                 </div>
 
                                 <div class="form-group mt-4"  >
                                   <label for="exampleInputEmail1">Nama Buku</label>
-                                  <input type="text" name="nama_buku" class="form-control" placeholder="Nama buku populer">
+                                  <input type="text" name="nama_buku" class="form-control @error('nama_buku') is-invalid @enderror" placeholder="Nama buku populer" value="{{old('nama_buku')}}">
+                                  @error('nama_buku')
+                                  <div class="invalid-feedback">{{$message}}</div>
+                                  @enderror
                                 </div>
 
                                 <div class="form-group mt-4" >
                                   <label for="exampleInputEmail1">komentar</label>
-                                  <input type="text" name="komentar" class="form-control" placeholder="Komentar kamu">
+                                  <input type="text" name="komentar" class="form-control @error('komentar') is-invalid @enderror" placeholder="Komentar kamu" value="{{old('komentar')}}">
+                                  @error('komentar')
+                                  <div class="invalid-feedback">{{$message}}</div>
+                                  @enderror
                                 </div>
 
                                 <div class="form-group mt-4 mb-4">
                                   <label for="exampleInputEmail1">genre</label>
-                                  <select class="form-select" name="genre" aria-label="Default select example">
+                                  <select class="form-select" name="genre" aria-label="Default select example" >
                                     <option selected>Pilih Genre</option>
                                     <option value="1">Romantis</option>
                                     <option value="2">Fanfiction</option>

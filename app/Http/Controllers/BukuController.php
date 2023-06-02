@@ -20,6 +20,17 @@ class BukuController extends Controller
 
     public function insertdata(Request $request)
     {
+        $request->validate([
+            'foto' => 'required|mimes:jpg,png,jpng',
+            'nama_buku' => 'required',
+            'komentar' => 'required',
+        ],
+        [
+            'foto.required' => 'Kalian harus memasukkan file!',
+            'nama_buku.required' => 'Kalian harus memasukkan nama buku!',
+            'komentar.required' => 'Kalian marus memiliki komentar!'
+        ]);
+
         $data = buku::create($request->all());
         if ($request -> hasFile('foto')) {
             $request -> file('foto')->move('fotobuku/',$request->file('foto')->getClientOriginalName());
@@ -38,6 +49,17 @@ class BukuController extends Controller
 
     public function updatedata(Request $request, $id)
     {
+        $request->validate([
+            'foto' => 'required|mimes:jpg,png,jpng',
+            'nama_buku' => 'required',
+            'komentar' => 'required',
+        ],
+        [
+            'foto.required' => 'Kalian harus memasukkan file!',
+            'nama_buku.required' => 'Kalian harus memasukkan nama buku!',
+            'komentar.required' => 'Kalian marus memiliki komentar!'
+        ]);
+
         $data = buku::find($id);
         $data->update($request->all());
         if ($request -> hasFile('foto')) {

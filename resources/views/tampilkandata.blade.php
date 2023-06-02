@@ -20,23 +20,23 @@
                                 @csrf
                                 <div class="form-group mt-4"  >
                                   <label for="exampleInputEmail1">Gambar</label>
-                                  <input type="file" name="foto" class="form-control" value="{{$data -> foto}}">
+                                  <input type="file" name="foto" class="form-control" value="{{old('user',$data->foto)}}">
                                 </div>
 
                                 <div class="form-group mt-4"  >
                                   <label for="exampleInputEmail1">Nama Buku</label>
-                                  <input type="text" name="nama_buku" class="form-control" placeholder="Nama buku populer" value="{{$data -> nama_buku}}">
+                                  <input type="text" name="nama_buku" class="form-control" placeholder="Nama buku populer" value="{{old('user',$data->nama_buku)}}">
                                 </div>
 
                                 <div class="form-group mt-4" >
                                   <label for="exampleInputEmail1">komentar</label>
-                                  <input type="text" name="komentar" class="form-control" placeholder="Komentar kamu" value="{{$data -> komentar}}">
+                                  <input type="text" name="komentar" class="form-control" placeholder="Komentar kamu" value="{{old('user',$data->komentar)}}">
                                 </div>
 
                                 <div class="form-group mt-4 mb-4">
                                   <label for="exampleInputEmail1">genre</label>
                                   <select class="form-select" name="genre" aria-label="Default select example">
-                                    <option selected >{{$data -> genre}}</option>
+                                    <option selected ></option>
                                     <option value="1">Romantis</option>
                                     <option value="2">Fanfiction</option>
                                     <option value="3">Science Fiction</option>
