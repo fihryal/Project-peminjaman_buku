@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BukuController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,7 @@ Route::get('/tampilkandata/{id}',[BukuController::class, 'edit']);
 Route::post('/updatedata/{id}',[BukuController::class, 'updatedata']);
 
 Route::get('/delete/{id}',[BukuController::class, 'delete']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
