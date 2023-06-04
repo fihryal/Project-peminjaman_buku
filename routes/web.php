@@ -24,10 +24,10 @@ Route::get('/perpus',[BukuController::class, 'index']);
 Route::get('/tambahbuku',[BukuController::class, 'create']);
 Route::post('/insertdata',[BukuController::class, 'insertdata']);
 
-Route::get('/tampilkandata/{id}',[BukuController::class, 'edit']);
-Route::post('/updatedata/{id}',[BukuController::class, 'updatedata']);
+Route::get('/tampilkandata/{id}',[BukuController::class, 'edit'])->middleware('is_admin');
+Route::post('/updatedata/{id}',[BukuController::class, 'updatedata'])->middleware('is_admin');
 
-Route::get('/delete/{id}',[BukuController::class, 'delete']);
+Route::get('/delete/{id}',[BukuController::class, 'delete'])->middleware('is_admin');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
